@@ -1,0 +1,5 @@
+# Generated from the combos section of randomcontainers/exiftool package.yml by randomcontainers/ci.
+# Do not edit; change package.yml in randomcontainers/exiftool instead.
+name: exiftool-imagemagick
+owner: exiftool
+with: [imagemagick]
