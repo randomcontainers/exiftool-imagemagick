@@ -12,7 +12,7 @@ These are unofficial builds, not affiliated with or endorsed by the upstream pro
 docker run --rm --user "$(id -u):$(id -g)" -v "$PWD:/work" ghcr.io/randomcontainers/exiftool-imagemagick -a -G1 -s photo.jpg
 ```
 
-The same images can also be pulled as `randomcontainers.com/exiftool-imagemagick`. The examples in the [exiftool README](https://github.com/randomcontainers/exiftool#readme) work with this image too.
+The examples in the [exiftool README](https://github.com/randomcontainers/exiftool#readme) work with this image too.
 
 ## Tags
 
