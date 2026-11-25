@@ -58,7 +58,7 @@ gh attestation verify oci://ghcr.io/randomcontainers/exiftool-imagemagick:latest
   --repo randomcontainers/exiftool-imagemagick --signer-repo randomcontainers/ci
 ```
 
-Each image also has a keyless cosign signature from the same workflow, for admission controllers that check cosign signatures:
+Images published since November 2026 also have a keyless cosign signature from the same workflow, for admission controllers that check cosign signatures. Tags last built before then have only the attestation.
 
 ```sh
 cosign verify ghcr.io/randomcontainers/exiftool-imagemagick:latest \
@@ -67,7 +67,7 @@ cosign verify ghcr.io/randomcontainers/exiftool-imagemagick:latest \
   --certificate-github-workflow-repository randomcontainers/exiftool-imagemagick
 ```
 
-Images from `ghcr.io/randomcontainers/exiftool` are built in [randomcontainers/exiftool](https://github.com/randomcontainers/exiftool), so name that repository in `--repo` and `--certificate-github-workflow-repository`.
+Images from `ghcr.io/randomcontainers/exiftool` are built in [randomcontainers/exiftool](https://github.com/randomcontainers/exiftool), so use `randomcontainers/exiftool` in `--repo` and `--certificate-github-workflow-repository`.
 
 ## Updates
 
