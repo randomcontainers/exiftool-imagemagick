@@ -58,7 +58,16 @@ gh attestation verify oci://ghcr.io/randomcontainers/exiftool-imagemagick:latest
   --repo randomcontainers/exiftool-imagemagick --signer-repo randomcontainers/ci
 ```
 
-Images from `ghcr.io/randomcontainers/exiftool` are built in [randomcontainers/exiftool](https://github.com/randomcontainers/exiftool), so verify them with `--repo randomcontainers/exiftool --signer-repo randomcontainers/ci`.
+Each image also has a keyless cosign signature from the same workflow, for admission controllers that check cosign signatures:
+
+```sh
+cosign verify ghcr.io/randomcontainers/exiftool-imagemagick:latest \
+  --certificate-identity https://github.com/randomcontainers/ci/.github/workflows/build.yml@refs/tags/v1 \
+  --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+  --certificate-github-workflow-repository randomcontainers/exiftool-imagemagick
+```
+
+Images from `ghcr.io/randomcontainers/exiftool` are built in [randomcontainers/exiftool](https://github.com/randomcontainers/exiftool), so name that repository in `--repo` and `--certificate-github-workflow-repository`.
 
 ## Updates
 
